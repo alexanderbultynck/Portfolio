@@ -1,37 +1,6 @@
-import { Octokit, RequestError } from "octokit";
-
-interface RepositoryInfo {
-    id: number | bigint;
-    name: string;
-    url: string;
-}
+import { getRepositories } from "../lib/github";
 
 export default async function Projects() {
-    const octokit = new Octokit({
-        auth: process.env["GITHUB_TOKEN"]
-    });
-
-    async function getRepositories(): Promise<RepositoryInfo[]> {
-        try {
-            const response = await octokit.request("GET /user/repos", {
-                visibility: "public",
-                affiliation: "owner"
-            });
-            return response.data.map((repo) => ({
-                id: repo.id,
-                name: repo.name,
-                url: repo.html_url
-            }));
-        } catch (error) {
-            if (error instanceof RequestError) {
-                console.error(`Status: ${error.status}, Message: ${error.message}`);
-            } else {
-                console.error(error);
-            }
-            return [];
-        }
-    }
-
     const repos = await getRepositories();
 
     return (
@@ -61,8 +30,7 @@ export default async function Projects() {
                                     <a href={repo.url}>{repo.url}</a>
                                 </td>
                             </tr>
-                        ))
-                    )}
+                        )))}
                 </tbody>
             </table>
         </main>
