@@ -10,26 +10,27 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
-    "next": "^16.3.2",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "next": "^16.3.8",
+    "octokit": "^5.0.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20.19.43",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.2",
+    "eslint-config-next": "^16.3.8",
     "tailwindcss": "^4.3.3",
     "typescript": "^6",
-    "wrangler": "^4.139.0"
+    "wrangler": "^4.147.0"
   },
   "allowScripts": {
     "sharp@0.34.5": true,
     "unrs-resolver@1.12.2": true,
     "esbuild@0.25.4": true,
     "esbuild@0.28.1": true,
-    "workerd@1.20260923.1": true
+    "workerd@1.20261001.1": true
   }
 }
