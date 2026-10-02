@@ -10,12 +10,15 @@ const octokit = new Octokit({
     auth: process.env["GITHUB_TOKEN"]
 });
 
+export const revalidate = 3600;
+
 export async function getRepositories(): Promise<RepositoryInfo[]> {
     try {
         const response = await octokit.request("GET /user/repos", {
             visibility: "public",
             affiliation: "owner"
         });
+        console.log(response)
         return response.data.map((repo) => ({
             id: repo.id,
             name: repo.name,
