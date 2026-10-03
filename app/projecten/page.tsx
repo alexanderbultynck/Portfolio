@@ -8,7 +8,7 @@ export default async function Projects() {
             <h1 className="text-xl font-bold mb-4">Mijn projecten</h1>
             <table className="min-w-full border-collapse border border-gray-300">
                 <thead>
-                    <tr className="text-left">
+                    <tr className="text-left font-bold">
                         <th className="border border-gray-300 px-4 py-2">Project</th>
                         <th className="border border-gray-300 px-4 py-2">URL</th>
                     </tr>
