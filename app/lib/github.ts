@@ -10,8 +10,6 @@ const octokit = new Octokit({
     auth: process.env["GITHUB_TOKEN"]
 });
 
-export const revalidate = 3600;
-
 export async function getRepositories(): Promise<RepositoryInfo[]> {
     try {
         const response = await octokit.request("GET /user/repos", {
