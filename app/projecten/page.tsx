@@ -27,7 +27,7 @@ export default async function Projects() {
                                     {repo.name}
                                 </td>
                                 <td className="border border-gray-300 px-4 py-2">
-                                    <a href={repo.url}>{repo.url}</a>
+                                    <a className="link" href={repo.url}>{repo.url}</a>
                                 </td>
                             </tr>
                         )))}
