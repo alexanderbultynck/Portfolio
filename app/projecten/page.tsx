@@ -1,9 +1,8 @@
-import { getRepositories} from "@/lib/github";
-import { RepositoryInfo } from "@/types/github";
+import { getRepositories } from "@/lib/github";
 
 export const dynamic = "force-dynamic";
 
-export default async function Projects({ id, name, url }: RepositoryInfo) {
+export default async function Projects() {
     const repos = await getRepositories();
 
     return (
@@ -24,15 +23,16 @@ export default async function Projects({ id, name, url }: RepositoryInfo) {
                             </td>
                         </tr>
                     ) : (
+                        repos.map(({id, name, url}) => (
                         <tr key={id}>
                             <td className="border border-gray-300 px-4 py-2">
                                 {name}
                             </td>
                             <td className="border border-gray-300 px-4 py-2">
-                                <a className="link" href={url}>{url}</a>
+                                <a className="link" href={url} target="_blank">{url}</a>
                             </td>
                         </tr>
-                    )}
+                    )))}
                 </tbody>
             </table>
         </main>
