@@ -1,10 +1,5 @@
 import { Octokit, RequestError } from "octokit";
-
-interface RepositoryInfo {
-    id: number | bigint;
-    name: string;
-    url: string;
-}
+import { RepositoryInfo } from "@/types/github";
 
 const octokit = new Octokit({
     auth: process.env["GITHUB_TOKEN"]
