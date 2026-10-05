@@ -10,14 +10,18 @@ const octokit = new Octokit({
     auth: process.env["GITHUB_TOKEN"]
 });
 
+const version: string = '2026-03-10'
+
 export async function getRepositories(): Promise<RepositoryInfo[]> {
     try {
         const response = await octokit.request("GET /user/repos", {
             visibility: "public",
-            affiliation: "owner"
+            affiliation: "owner",
+            headers: {
+                'X-GitHub-Api-Version': version
+            }
         });
-        console.log(response)
-        return response.data.map((repo) => ({
+        return response.data.map((repo): RepositoryInfo => ({
             id: repo.id,
             name: repo.name,
             url: repo.html_url
