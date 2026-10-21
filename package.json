@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "upgrade": "next upgrade --agent",
     "dev": "next dev",
     "build": "next build",
     "build:worker": "opennextjs-cloudflare build",
@@ -33,8 +32,7 @@
   "allowScripts": {
     "sharp@0.34.5": true,
     "unrs-resolver@1.12.2": true,
-    "esbuild@0.25.4": true,
-    "esbuild@0.28.1": true,
-    "workerd@1.20261006.1": true
+    "esbuild@0.28.2": true,
+    "workerd@1.20261019.1": true
   }
 }

@@ -1,7 +1,5 @@
 import { getRepositories } from "@/lib/github";
 
-export const dynamic = "force-dynamic";
-
 export default async function Projects() {
     const repos = await getRepositories();
 
