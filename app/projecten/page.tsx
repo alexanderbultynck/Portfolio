@@ -17,7 +17,7 @@ export default async function Projects() {
                     {repos.length === 0 ? (
                         <tr>
                             <td colSpan={2} className="border border-gray-300 px-4 py-2 text-center text-gray-500">
-                                Geen repositories gevonden of er is een fout opgetreden.
+                                Geen repositories gevonden.
                             </td>
                         </tr>
                     ) : (
