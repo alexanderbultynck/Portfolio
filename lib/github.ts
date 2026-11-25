@@ -1,17 +1,16 @@
 import { Octokit, RequestError } from "octokit";
 import { RepositoryInfo } from "@/types/github";
 
-const octokit = new Octokit({
-    auth: process.env["GITHUB_TOKEN"]
-});
+const octokit = new Octokit();
 
 const version: string = '2026-03-10'
 
 export async function getRepositories(): Promise<RepositoryInfo[]> {
     try {
-        const response = await octokit.request("GET /user/repos", {
-            visibility: "public",
-            affiliation: "owner",
+        const response = await octokit.request("GET /users/{username}/repos", {
+            username: "alexanderbultynck",
+            sort: "created",
+            direction: "asc",
             headers: {
                 'X-GitHub-Api-Version': version
             }
